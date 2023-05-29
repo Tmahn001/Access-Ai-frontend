@@ -61,7 +61,7 @@ console.log(primaryColor)
       }
 
         let uploadFile = async()=>{
-            let response = await fetch('http://127.0.0.1:8000/bots', {
+            let response = await fetch('https://access-ai.onrender.com/bots', {
           method:'POST',
           headers:{
               //'Content-Type': 'application/json',

@@ -34,7 +34,7 @@ console.log(profile)
     if (input.trim) {
       setChat([...chat, { role: 'user', content: input }]);
       setInput('');
-      const response = await fetch('http://localhost:8000/ask', {
+      const response = await fetch('https://access-ai.onrender.com/ask', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ console.log(profile)
       }
 
       if (!title) {
-        const createTitle = await fetch('http://localhost:8000/api/title', {
+        const createTitle = await fetch('https://access-ai.onrender.com/api/title', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
