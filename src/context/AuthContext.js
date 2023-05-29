@@ -19,7 +19,7 @@ export const AuthProvider = ({children}) =>{
 
     let loginUser = async (e) =>{
         e.preventDefault()
-        let response =  await fetch('http://127.0.0.1:8000/login', {
+        let response =  await fetch('https://access-ai.onrender.com/login', {
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
@@ -54,7 +54,7 @@ export const AuthProvider = ({children}) =>{
 
     let updateToken = async ()=> {
 
-        let response = await fetch('http://127.0.0.1:8000/token/refresh', {
+        let response = await fetch('https://access-ai.onrender.com/token/refresh', {
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
@@ -78,7 +78,7 @@ export const AuthProvider = ({children}) =>{
     }
 
     let getProfile = async()=>{
-        let response = await fetch('http://127.0.0.1:8000/user/details', {
+        let response = await fetch('https://access-ai.onrender.com/user/details', {
             method:'GET',
             headers:{
                 'Content-Type':'application/json',
@@ -96,24 +96,7 @@ export const AuthProvider = ({children}) =>{
         }
 
     }
-    /**let getpaymentinfo = async()=>{
-        let response = await fetch('https://api.mperial.ng/api/tenant-payment', {
-            method:'GET',
-            headers:{
-                'Content-Type':'application/json',
-                'Authorization':'Bearer ' + String(authTokens.access) 
-            }
-
-        })
-        let data = await response.json()
-
-        if(response.status === 200){
-            setPaymentData(data)
-        }else if(response.statusText === 'Unauthorized'){
-            logoutUser()
-        }
-
-    }**/
+   
 
     let context_data ={
         user:user,
